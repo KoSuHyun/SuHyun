@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- log4j 객체가 로그메세지를 어디에 어떤 형식으로 남길 지에 대한 정보 설정 -->
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j">
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%t][%d{yyyy-MM-dd HH:mm:ss}] %-5p %c:%m - %m%n"/>
+		</layout>
+	</appender>
+	
+	<root>
+		<priority value="INFO"/>
+		<appender-ref ref="console"/>
+	</root>
+	
+	<logger name="org.springframework.jdbc">
+		<level value="DEBUG"/>
+	</logger>
+</log4j:configuration>
